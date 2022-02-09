@@ -93,17 +93,17 @@ classes when you're approaching the deliverables below.
 ### Migrations
 
 Before working on the rest of the deliverables, you will need to create a
-migration for the `freebies` table.
+migration for the `freebies` table. ✅
 
 - A `Freebie` belongs to a `Dev`, and a `Freebie` also belongs to a `Company`.
   In your migration, create any columns your `freebies` table will need to
-  establish these relationships using the right foreign keys.
+  establish these relationships using the right foreign keys. ✅
 - The `freebies` table should also have:
-  - An `item_name` column that stores a string.
-  - A `value` column that stores an integer.
+  - An `item_name` column that stores a string. ✅
+  - A `value` column that stores an integer. ✅
 
 After creating the `freebies` table using a migration, use the `seeds.rb` file to
-create instances of your `Freebie` class so you can test your code.
+create instances of your `Freebie` class so you can test your code. ✅
 
 **Once you've set up your `freebies` table**, work on building out the following
 deliverables.
@@ -118,54 +118,54 @@ is "freebie".
 
 #### Freebie
 
-- `Freebie#dev`
+- `Freebie#dev` ✅
   - returns the `Dev` instance for this Freebie
-- `Freebie#company`
+- `Freebie#company` ✅
   - returns the `Company` instance for this Freebie
 
 #### Company
 
-- `Company#freebies`
+- `Company#freebies` ✅
   - returns a collection of all the freebies for the Company
-- `Company#devs`
+- `Company#devs` ✅
   - returns a collection of all the devs who collected freebies from the Company
 
 #### Dev
 
-- `Dev#freebies`
+- `Dev#freebies` ✅
   - returns a collection of all the freebies that the Dev has collected
-- `Dev#companies`
+- `Dev#companies` ✅
   - returns a collection of all the companies that the Dev has collected
     freebies from
 
 Use `rake console` and check that these methods work before proceeding. For
 example, you should be able to call `Dev.first.companies` and see a list of the
-companies for the first dev in the database based on your seed data; and
-`Freebie.first.dev` should return the dev for the first freebie in the database.
+companies for the first dev in the database based on your seed data; ✅ and
+`Freebie.first.dev` should return the dev for the first freebie in the database. ✅
 
 ### Aggregate and Association Methods
 
 #### Freebie
 
-- `Freebie#print_details`
+- `Freebie#print_details` ✅
   - should return a string formatted as follows:
-    `{insert dev's name} owns a {insert freebie's item_name} from {insert company's name}`
+    `{insert dev's name} owns a {insert freebie's item_name} from {insert company's name}` 
 
 #### Company
 
-- `Company#give_freebie(dev, item_name, value)`
+- `Company#give_freebie(dev, item_name, value)` ✅
   - takes a `dev` (an instance of the `Dev` class), an `item_name` (string), and a `value`
     as arguments, and creates a new `Freebie` instance associated with this
     company and the given dev
-- `Company.oldest_company`
+- `Company.oldest_company` ✅ meh 
   - returns the `Company` instance with the earliest founding year
 
 #### Dev
 
-- `Dev#received_one?(item_name)`
+- `Dev#received_one?(item_name)` ✅
   - accepts an `item_name` (string) and returns true if any of the freebies
     associated with the dev has that `item_name`, otherwise returns false
-- `Dev#give_away(dev, freebie)`
+- `Dev#give_away(dev, freebie)`✅
   - accepts a `Dev` instance and a `Freebie` instance, changes the freebie's dev
     to be the given dev; your code should only make the change if the freebie
     belongs to the dev who's giving it away
